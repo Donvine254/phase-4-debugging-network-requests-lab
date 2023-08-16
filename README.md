@@ -62,12 +62,15 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: I inspected the browser network tab and checked the ActiveRecord error in the response, and then fixed the route in the toys controller
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: I inspected the browser console and the rails log, added a byebug in the controller to check the hash and noticed the id param is not accepted by the model 
+  ```ruby
+  Parameters {"likes"=>1, "controller"=>"toys", "action"=>"update", "id"=>"9"} permitted: false>
+  ```
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: checked the browser console and rails logs and found the route for delete is not defined in the routes.
